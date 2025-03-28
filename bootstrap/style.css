@@ -44,13 +44,24 @@ footer {
     color: #ff8c00;
 }
 
-.btn-custom {
+.btn-custom-orange {
     background: linear-gradient(45deg, #ff8c00, #ff9e33);
     border: none;
     transition: all 0.3s ease;
 }
 
-.btn-custom:hover {
+.btn-custom-orange:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(244, 156, 49, 0.4);
+}
+
+.btn-custom-green {
+    background: linear-gradient(45deg, #32cd32, #3aff3a);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-green:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(78, 244, 49, 0.4);
 }
