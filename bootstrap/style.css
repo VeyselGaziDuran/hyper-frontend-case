@@ -1,0 +1,56 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+}
+  
+footer {
+    margin-top: auto;
+}
+
+.product-card {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    transition: all 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff8c00;
+}
+
+.btn-custom {
+    background: linear-gradient(45deg, #ff8c00, #ff9e33);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(244, 156, 49, 0.4);
+}

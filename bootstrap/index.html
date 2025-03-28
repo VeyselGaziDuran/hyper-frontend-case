@@ -3,11 +3,65 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body class="bg-dark text-white">
+    <header class="text-center bg-dark py-4 border-bottom border-2 border-light">
+        <h1 class="text-4xl font-bold text-white">Products</h1>
+    </header>
+    
+    <div class=" p-5">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+
+                
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="product-card bg-white bg-opacity-10 rounded-4 shadow-sm h-100 position-relative">
+                        <span class="badge bg-danger">New</span>
+                        <div class="overflow-hidden">
+                            <img src="https://picsum.photos/200" class="product-image w-100" alt="Product">
+                        </div>
+                        <div class="p-4">
+                            <h5 class="fw-bold text-white mb-3">Lorem, ipsum dolor.</h5>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="me-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                </div>
+                                <small class="text-light">(4.5/5)</small>
+                            </div>
+                            <p class="text-white mb-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row">
+                                <span class="price">299 TL</span>
+                                <div class="d-flex flex-column flex-md-row gap-1">
+                                  <button class="btn btn-custom text-white px-4 py-2 rounded-pill">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                  </button>
+                                  <button class="btn btn-custom text-white lpx-4 py-2 rounded-pill">
+                                    <i class="fa-solid fa-eye"></i>
+                                  </button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 bg-dark text-white border-top border-2 border-light">
+        <p>&copy; 2025 Hyper Teknoloji</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
   </body>
 </html>
