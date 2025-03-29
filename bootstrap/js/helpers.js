@@ -15,3 +15,25 @@ function generateRatingStars(rating) {
     
     return starsHTML;
 }
+
+function getValidImageUrl(imageUrl, defaultUrl = 'https://picsum.photos/300/200') {
+    if (!imageUrl) return defaultUrl;
+    
+    try {
+        new URL(imageUrl);
+        
+        const lowerUrl = imageUrl.toLowerCase();
+        if (lowerUrl.endsWith('.jpg') || 
+            lowerUrl.endsWith('.jpeg') || 
+            lowerUrl.endsWith('.png') || 
+            lowerUrl.endsWith('.webp') || 
+            lowerUrl.endsWith('.gif') ||
+            lowerUrl.includes('image')) {
+            return imageUrl;
+        }
+    } catch (e) {
+        console.warn("Invalid image URL:", imageUrl);
+    }
+    
+    return defaultUrl + '?random=' + Math.random().toString(36).substring(2, 10);
+}
