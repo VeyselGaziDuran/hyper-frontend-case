@@ -41,7 +41,7 @@ function renderProducts(apiResponse) {
         let rating = product.rating !== undefined ? product.rating : (Math.random() * 4 + 1).toFixed(1);
         
         html += `
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
             <div class="product-card bg-white bg-opacity-10 rounded-4 shadow-sm h-100 position-relative">
                 <span class="badge bg-danger">New</span>
                 <div class="overflow-hidden">

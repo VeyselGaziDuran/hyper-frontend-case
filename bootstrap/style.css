@@ -379,7 +379,6 @@ footer .list-inline-item a:hover {
     }
 }
 
-/* Scrollable categories dropdown */
 .dropdown-menu-scrollable {
     max-height: 400px;
     overflow-y: auto;
@@ -387,7 +386,6 @@ footer .list-inline-item a:hover {
     padding-bottom: 0.5rem;
 }
 
-/* Scrollbar styling for the dropdown */
 .dropdown-menu-scrollable::-webkit-scrollbar {
     width: 8px;
 }
@@ -406,7 +404,6 @@ footer .list-inline-item a:hover {
     background: rgba(255, 140, 0, 0.7);
 }
 
-/* Category item with potential subcategories */
 .category-item {
     position: relative;
 }
@@ -416,7 +413,6 @@ footer .list-inline-item a:hover {
     opacity: 0.8;
 }
 
-/* Subcategories styling */
 .subcategories {
     display: none;
     position: absolute;
@@ -434,7 +430,6 @@ footer .list-inline-item a:hover {
     display: block;
 }
 
-/* Hover effect for category items */
 .category-item:hover > a.dropdown-item {
     background-color: rgba(255, 140, 0, 0.1);
     color: #ff8c00;
