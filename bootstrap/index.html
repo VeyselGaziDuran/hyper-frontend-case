@@ -30,52 +30,39 @@
           </div>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-th-large me-1"></i> Categories
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-scrollable" id="categories-dropdown">
-                <li class="px-3 py-1 text-light">
-                  <div class="d-flex align-items-center">
-                    <div class="spinner-border spinner-border-sm text-orange me-2" role="status">
-                      <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <span>Loading categories...</span>
-                  </div>
-                </li>
-              </ul>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-th-large me-1"></i> Categories
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-scrollable" id="categories-dropdown">
+                    <li class="px-3 py-1 text-light">
+                        <div class="d-flex align-items-center">
+                            <div class="spinner-border spinner-border-sm text-orange me-2" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <span>Loading categories...</span>
+                        </div>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-badge">3</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark p-3 cart-dropdown">
-                <h6 class="dropdown-header border-bottom pb-2 mb-2">Your Cart (3)</h6>
-                <div class="cart-items mb-2">
-                  <div class="cart-item d-flex align-items-center mb-2">
-                    <img src="https://via.placeholder.com/40" class="cart-item-img rounded me-2" alt="Product">
-                    <div class="flex-grow-1">
-                      <h6 class="mb-0 text-truncate cart-item-title">Product Name</h6>
-                      <div class="d-flex justify-content-between mt-1">
-                        <small class="text-orange">₺249.90</small>
-                        <small>x1</small>
-                      </div>
+                <a class="nav-link position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark p-3 cart-dropdown">
+                    <h6 class="dropdown-header border-bottom pb-2 mb-2">Your Cart (0)</h6>
+                    <div class="cart-items mb-2" id="cart-items">
                     </div>
-                    <button class="btn btn-sm text-danger ms-2 remove-item-btn">
-                      <i class="fas fa-times"></i>
-                    </button>
-                  </div>
+                    <div class="border-top pt-2">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small>Total:</small>
+                            <small class="text-orange" id="cart-total">₺0.00</small>
+                        </div>
+                        <a href="#" class="btn btn-warning w-100">Go to Checkout</a>
+                    </div>
                 </div>
-                <div class="border-top pt-2">
-                  <div class="d-flex justify-content-between mb-2">
-                    <small>Total:</small>
-                    <small class="text-orange">₺749.70</small>
-                  </div>
-                  <a href="#" class="btn btn-warning w-100">Go to Checkout</a>
-                </div>
-              </div>
             </li>
-          </ul>
+        </ul>
         </div>
       </div>
     </nav>
