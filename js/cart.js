@@ -85,13 +85,13 @@ function updateCartUI() {
     // Update cart dropdown header
     const cartHeader = document.querySelector('.dropdown-menu .dropdown-header');
     if (cartHeader) {
-        cartHeader.textContent = `Your Cart (${cartCount})`;
+        cartHeader.textContent = `Sepet (${cartCount})`;
     }
     
     // Update cart items list
     if (cartItemsContainer) {
         if (cart.length === 0) {
-            cartItemsContainer.innerHTML = '<div class="text-center py-3"><p class="mb-0">Your cart is empty</p></div>';
+            cartItemsContainer.innerHTML = '<div class="text-center py-3"><p class="mb-0">Sepet Boş</p></div>';
         } else {
             let html = '';
             cart.forEach(item => {
@@ -117,16 +117,14 @@ function updateCartUI() {
                 </div>`;
             });
             cartItemsContainer.innerHTML = html;
-            
-            // Add event listeners for removing items
+
             document.querySelectorAll('.remove-item-btn').forEach(button => {
                 button.addEventListener('click', function() {
                     const productId = this.getAttribute('data-id');
                     removeFromCart(productId);
                 });
             });
-            
-            // Add event listeners for quantity buttons
+
             document.querySelectorAll('.decrease-qty').forEach(button => {
                 button.addEventListener('click', function() {
                     const productId = this.getAttribute('data-id');
