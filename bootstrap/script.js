@@ -1,9 +1,5 @@
 const API_URL = "https://api.hyperteknoloji.com.tr/products/list"; 
-const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJMb2dpblR5cG9pIjoiRGVtbyIsIkxhc3ROYW1lIjoiSHlwZXIiLCJFbWFpbCI6ImRlbW9AaHlwZXIuY29tIiwiQ3VzdG9tZXJUeXBlSUQiOiIzMiIsIklzUmVzZWxsZXIiOiIwIiwiSXNBUEkiOiIxIiwiUmVmZXJhbmNlSUQiOiIiLCJSZWdpc3RlckRhdGUiOiIzLzI1LzIwMjUgMTowMDo0OCBQTSIsImV4cCI6MjA1NDE1MzQ0MSwiaXNzIjoiaHR0cHM6Ly9oeXBlcnRla25vbG9qaS5jb20iLCJhdWQiOiJodHRwczovL2h5cGVydGVrbm9sb2ppLmNvbSJ9._bWpxRgVYWVjZ8qUnjoEUPuROdAHEOeRNAte_7bKouo";
-
-const PRODUCTS_PER_PAGE = 40;
-let currentPage = 1;
-let allProducts = [];
+const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJMb2dpblR5cGUiOiIxIiwiQ3VzdG9tZXJJRCI6IjU1NzI0IiwiRmlyc3ROYW1lIjoiRGVtbyIsIkxhc3ROYW1lIjoiSHlwZXIiLCJFbWFpbCI6ImRlbW9AaHlwZXIuY29tIiwiQ3VzdG9tZXJUeXBlSUQiOiIzMiIsIklzUmVzZWxsZXIiOiIwIiwiSXNBUEkiOiIxIiwiUmVmZXJhbmNlSUQiOiIiLCJSZWdpc3RlckRhdGUiOiIzLzI1LzIwMjUgMTowMDo0OCBQTSIsImV4cCI6MjA1NDE1MzQ0MSwiaXNzIjoiaHR0cHM6Ly9oeXBlcnRla25vbG9qaS5jb20iLCJhdWQiOiJodHRwczovL2h5cGVydGVrbm9sb2ppLmNvbSJ9._bWpxRgVYWVjZ8qUnjoEUPuROdAHEOeRNAte_7bKouo";
 
 async function fetchProducts() {
     const productList = document.getElementById('product-list');
@@ -39,8 +35,7 @@ async function fetchProducts() {
             try {
                 const data = JSON.parse(responseText);
                 console.log("API data:", data);
-                allProducts = data.data || [];
-                renderCurrentPage();
+                renderProducts(data);
             } catch (parseError) {
                 console.error("JSON parse error:", parseError);
                 throw new Error(`Failed to parse API response: ${parseError.message}`);
@@ -54,56 +49,6 @@ async function fetchProducts() {
             `<div class="col-12 text-center p-5"><h3>Ürünler yüklenirken bir hata oluştu</h3>
             <p>Hata detayı: ${error.message}</p></div>`;
     }
-}
-
-function renderCurrentPage() {
-    const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
-    const endIndex = startIndex + PRODUCTS_PER_PAGE;
-    const paginatedProducts = allProducts.slice(startIndex, endIndex);
-    
-    renderProducts({ data: paginatedProducts });
-    renderPagination();
-}
-
-function renderPagination() {
-    const totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
-    const paginationContainer = document.getElementById('pagination');
-    
-    let html = '<ul class="pagination justify-content-center">';
-    
-    html += `
-        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-            <a class="page-link" href="#" data-page="${currentPage - 1}">Previous</a>
-        </li>
-    `;
-    
-    for (let i = 1; i <= totalPages; i++) {
-        html += `
-            <li class="page-item ${currentPage === i ? 'active' : ''}">
-                <a class="page-link" href="#" data-page="${i}">${i}</a>
-            </li>
-        `;
-    }
-
-    html += `
-        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-            <a class="page-link" href="#" data-page="${currentPage + 1}">Next</a>
-        </li>
-    `;
-    
-    html += '</ul>';
-    paginationContainer.innerHTML = html;
-    document.querySelectorAll('#pagination .page-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const newPage = parseInt(e.target.dataset.page);
-            if (!isNaN(newPage) && newPage > 0 && newPage <= totalPages && newPage !== currentPage) {
-                currentPage = newPage;
-                renderCurrentPage();
-                document.getElementById('product-list').scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
 }
 
 function renderProducts(apiResponse) {
