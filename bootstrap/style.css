@@ -434,3 +434,24 @@ footer .list-inline-item a:hover {
     background-color: rgba(255, 140, 0, 0.1);
     color: #ff8c00;
 }
+
+/* Add to existing styles */
+#notification-container {
+    max-width: 300px;
+}
+
+#notification-container .alert {
+    margin-bottom: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    border-left: 4px solid #28a745;
+}
+
+.decrease-qty, .increase-qty {
+    color: #ff8c00;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.decrease-qty:hover, .increase-qty:hover {
+    color: #fff;
+}
