@@ -3,64 +3,143 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap</title>
+    <title>Product Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-</head>
+  </head>
   <body class="bg-dark text-white">
-    <header class="text-center bg-dark py-4 border-bottom border-2 border-light">
-        <h1 class="text-4xl font-bold text-white">Products</h1>
-    </header>
-    
-    <div class=" p-5">
-        <div class="container">
-            <div class="row g-4 justify-content-center">
-                <!-- card  -->
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="product-card bg-white bg-opacity-10 rounded-4 shadow-sm h-100 position-relative">
-                        <span class="badge bg-danger">New</span>
-                        <div class="overflow-hidden">
-                            <img src="https://picsum.photos/200" class="product-image w-100" alt="Product">
-                        </div>
-                        <div class="p-4">
-                            <h5 class="fw-bold text-white mb-3">Lorem, ipsum dolor.</h5>
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="me-2">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star-half-alt text-warning"></i>
-                                </div>
-                                <small class="text-light">(4.5/5)</small>
-                            </div>
-                            <p class="text-white mb-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
-                            </p>
-                            <div class="d-flex align-items-center justify-content-between ">
-                                <span class="price fs-5">299 TL</span>
-                                <div class="d-flex flex-row gap-1">
-                                  <button class="btn btn-custom-green text-white rounded-pill">
-                                    <i class="fa-solid fa-basket-shopping"></i>
-                                  </button>
-                                  <button class="btn btn-custom-orange text-white rounded-pill">
-                                    <i class="fa-solid fa-eye"></i>
-                                  </button>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card  -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <i class="fas fa-shopping-bag me-2 text-orange"></i>
+          <span>Hyperteknoloji.com</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <div class="search-wrapper mx-lg-auto my-3 my-lg-0">
+            <div class="search-bar position-relative">
+              <input type="text" placeholder="Search for products...">
+              <button class="search-button">
+                <i class="fas fa-search"></i>
+              </button>
             </div>
+          </div>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-th-large me-1"></i> Categories
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#"><i class="fas fa-laptop me-2"></i>Electronics</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-tshirt me-2"></i>Fashion</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-home me-2"></i>Home & Garden</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-utensils me-2"></i>Food & Grocery</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-list me-2"></i>All Categories</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">3</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark p-3 cart-dropdown">
+                <h6 class="dropdown-header border-bottom pb-2 mb-2">Your Cart (3)</h6>
+                <div class="cart-items mb-2">
+                  <div class="cart-item d-flex align-items-center mb-2">
+                    <img src="https://via.placeholder.com/40" class="cart-item-img rounded me-2" alt="Product">
+                    <div class="flex-grow-1">
+                      <h6 class="mb-0 text-truncate cart-item-title">Product Name</h6>
+                      <div class="d-flex justify-content-between mt-1">
+                        <small class="text-orange">₺249.90</small>
+                        <small>x1</small>
+                      </div>
+                    </div>
+                    <button class="btn btn-sm text-danger ms-2 remove-item-btn">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="border-top pt-2">
+                  <div class="d-flex justify-content-between mb-2">
+                    <small>Total:</small>
+                    <small class="text-orange">₺749.70</small>
+                  </div>
+                  <a href="#" class="btn btn-warning w-100">Go to Checkout</a>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+    <div class="container my-5">
+      <div class="row g-4" id="product-list">
+
+      </div>
+      
+      <div class="mt-5" id="pagination">
+      </div>
     </div>
-
-    <footer class="text-center py-4 bg-dark text-white border-top border-2 border-light">
-        <p>&copy; 2025 Hyper Teknoloji</p>
+    <footer class="bg-dark py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5 class="mb-3 text-white">About Us</h5>
+            <p class="mb-3">Hyperteknoloji offers the latest tech products with competitive prices and exceptional customer service.</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5 class="mb-3 text-white">Categories</h5>
+            <div class="footer-links" id="footer-categories">
+              <!-- Categories will be populated dynamically -->
+              <div class="d-flex align-items-center">
+                <div class="spinner-border spinner-border-sm text-orange me-2" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <span>Loading categories...</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5 class="mb-3 text-white">Quick Links</h5>
+            <div class="footer-links">
+              <a href="#">Home</a>
+              <a href="#">My Account</a>
+              <a href="#">Orders</a>
+              <a href="#">Wishlist</a>
+              <a href="#">Shopping Cart</a>
+            </div>
+          </div>
+          
+          <div class="col-md-3">
+            <h5 class="mb-3 text-white">Contact Us</h5>
+            <div class="footer-links">
+              <a href="#"><i class="fas fa-envelope me-2 text-orange"></i> info@hyperteknoloji.com</a>
+              <a href="#"><i class="fas fa-phone me-2 text-orange"></i> +90 123 456 7890</a>
+              <a href="#"><i class="fas fa-map-marker-alt me-2 text-orange"></i> Istanbul, Turkey</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-top border-secondary mt-4 pt-4 text-center">
+          <p class="mb-0">&copy; 2025 Hyperteknoloji.com. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
