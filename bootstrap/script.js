@@ -125,7 +125,7 @@ function renderProducts(apiResponse) {
                             <button class="btn btn-custom-green text-white rounded-pill" onclick="addToCart('${product.productID}')">
                                 <i class="fa-solid fa-basket-shopping"></i>
                             </button>
-                            <button class="btn btn-custom-orange text-white rounded-pill" onclick="window.location.href='${url}'">
+                            <button class="btn btn-custom-orange text-white rounded-pill" onclick="window.open('${url}', '_blank')">
                                 <i class="fa-solid fa-eye"></i>
                             </button>
                         </div>
