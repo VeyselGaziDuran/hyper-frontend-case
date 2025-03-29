@@ -46,6 +46,8 @@ function renderProducts(apiResponse) {
         }
         
         let rating = product.rating !== undefined ? product.rating : (Math.random() * 4 + 1).toFixed(1);
+
+        const starsHTML = generateRatingStars(rating);
         
         html += `
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
@@ -58,6 +60,12 @@ function renderProducts(apiResponse) {
                 <div class="p-4">
                     <h5 class="fw-bold text-white mb-3">${name}</h5>
                     <p class="text-white mb-4">${description.substring(0, 100)}${description.length > 100 ? '...' : ''}</p>
+                    
+                    <!-- Add Rating -->
+                    <div class="product-rating mb-3">
+                        ${starsHTML}
+                    </div>
+
                     <div class="d-flex align-items-center justify-content-between">
                         <span class="price fs-5">${formattedPrice}</span>
                         <div>

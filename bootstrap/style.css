@@ -435,7 +435,6 @@ footer .list-inline-item a:hover {
     color: #ff8c00;
 }
 
-/* Add to existing styles */
 #notification-container {
     max-width: 300px;
 }
@@ -454,4 +453,32 @@ footer .list-inline-item a:hover {
 
 .decrease-qty:hover, .increase-qty:hover {
     color: #fff;
+}
+
+.product-rating {
+    font-size: 0.9rem;
+}
+
+.user-rating {
+    cursor: pointer;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+}
+
+.user-rating .user-rating-star {
+    color: rgba(255, 255, 255, 0.25);
+    transition: all 0.2s ease;
+}
+
+.user-rating .user-rating-star.active {
+    color: #ffc107;
+}
+
+.user-rating .user-rating-star.hovered {
+    color: #ffc107;
+    transform: scale(1.2);
+}
+
+.user-rating .user-rating-star:hover {
+    transform: scale(1.2);
 }
